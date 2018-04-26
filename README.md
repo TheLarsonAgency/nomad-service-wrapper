@@ -20,5 +20,9 @@ You have a few options:
   to happen.
 * Integrate your app with the `runner.py` script.
 * Add custom API calls to `runner.py` and `app.py`.
-
+* Add/remove `terraform` files based on your setup, and set the relevent
+  settings in `variables.tf`.
+* Run terraform tools to deploy.
+* Create and validate a Docker image, pushing it to a repository.
+* Update the `nomad` configuration file and add the Docker image URL.
 
