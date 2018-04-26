@@ -5,10 +5,10 @@ variable "aws_region" {
 
 variable "app_name" {
   description = "The name of the S3 bucket that the firehose dumps to."
-  default = "siphonexchange"
+  default = "example"
 }
 
 variable "cluster_name" {
-  description = "The name of the cluster."
+  description = "The name of the cluster you're deploying to."
   default = "koralamode"
 }
