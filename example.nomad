@@ -11,7 +11,7 @@
 #
 #     https://www.nomadproject.io/docs/job-specification/job.html
 #
-job "nombot" {
+job "example" {
   # The "region" parameter specifies the region in which to execute the job. If
   # omitted, this inherits the default region name of "global".
   # region = "global"
@@ -165,7 +165,7 @@ job "nombot" {
     #
     #     https://www.nomadproject.io/docs/job-specification/task.html
     #
-    task "exchapi" {
+    task "example_api" {
       # The "driver" parameter specifies the task driver that should be used to
       # run the task.
       driver = "docker"
@@ -175,7 +175,7 @@ job "nombot" {
       # are specific to each driver, so please see specific driver
       # documentation for more information.
       config {
-        image = "coollyninja/siphonexchange"
+        image = "python" # Make this the source of your docker image
         port "http" {}
       }
 
@@ -242,7 +242,7 @@ job "nombot" {
       #     https://www.nomadproject.io/docs/job-specification/service.html
       #
       service {
-        name = "global-exchapi-check"
+        name = "global-example-check"
         tags = ["global", "cache"]
         port = "http"
         check {
@@ -292,7 +292,7 @@ job "nombot" {
       #     https://www.nomadproject.io/docs/job-specification/vault.html
       #
       vault {
-        policies      = ["secret/nombot"]
+        policies      = ["secret/example"]
         change_mode   = "signal"
         change_signal = "SIGHUP"
       }
